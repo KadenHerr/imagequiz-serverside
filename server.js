@@ -186,11 +186,17 @@ app.post('/place', (request, response) => {
     response.send(`The place ${name} was added successfully`);
 });
 
+// Return all of the flowers
+app.get('/flowers', (request, response) => {
+    response.json(flowers);
+});
 
+// Return all of the quizzes
 app.get('/quizzes', (request, response) => {
     response.json(quizzes);
 });
 
+// Return a single quiz using a given id.
 app.get('/quiz/:id', (request, response) => {
     let id = request.params.id;
     let quiz = quizzes[id];
@@ -201,6 +207,7 @@ app.get('/quiz/:id', (request, response) => {
     }
 });
 
+// Add a score to the scores array.
 app.post('/score', (request, response) => {
     let score = request.body.score;
     scores.push(score);
