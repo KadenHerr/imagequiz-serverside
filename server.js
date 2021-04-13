@@ -1,8 +1,9 @@
 // This is the server file
 
+
 // dependencies
 const express = require('express');
-
+const cors = require('cors');
 
 // create the server
 const app = express();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 4002;
 
 // parse json
 app.use(express.json());
+app.use(cors());
 
 // data
 let places = [];
