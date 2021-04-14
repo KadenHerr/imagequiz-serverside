@@ -211,9 +211,9 @@ app.get('/quiz/:id', (request, response) => {
 
 // Add a score to the scores array.
 app.post('/score', (request, response) => {
-    let score = request.body.score;
-    scores.push(score);
-    response.send(`The score ${score.length} was added successfully`);
+    let s = request.body.score;
+    scores.push(s);
+    response.send(`The score ${s} was added successfully`);
 });
 
 
