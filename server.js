@@ -17,6 +17,8 @@ app.use(cors());
 
 // data
 let scores = [];
+let quizzes = quizzes;
+let flowers = flowers;
 
 // Can delete this later
 app.get('/', (request, response) => {
