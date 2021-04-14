@@ -1,5 +1,5 @@
-const flowers = require('./flowers');
-const quizzes = require('./quizzes');
+const fs = require('./flowers');
+const qs = require('./quizzes');
 // This is the server file
 
 
@@ -17,6 +17,8 @@ app.use(cors());
 
 // data
 let scores = [];
+let flowers = fs;
+let quizzes = qs;
 
 
 
