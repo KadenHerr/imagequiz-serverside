@@ -109,4 +109,4 @@ let flowers = [
     }
 ];
 
-export default flowers;
+module.export = flowers;

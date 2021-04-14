@@ -1,4 +1,4 @@
-import flowers from './flowers';
+const flowers = require('./flowers');
 
 let generateQuestions = () => {
     let questions = [];
@@ -43,4 +43,4 @@ let generateQuizzes = () => {
 let quizzes = generateQuizzes();
 
 
-export default quizzes;
+module.export = flowers;
