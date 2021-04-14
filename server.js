@@ -213,7 +213,7 @@ app.get('/quiz/:id', (request, response) => {
 app.post('/score', (request, response) => {
     let score = request.body.score;
     scores.push(score);
-    response.send(`The score ${score} was added successfully`);
+    response.send(`The score ${score.length} was added successfully`);
 });
 
 
