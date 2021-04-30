@@ -16,3 +16,25 @@ let connection = {
 };
 
 const pool = new Pool(connection);
+
+// Methods for calls
+
+let addCustomer = (name, email, password) => {
+    return pool.query('insert into imagequiz.customers(name, email, password) values ($1, $2, $3)', [name, email, password])
+    .then(() => console.log('The customer was saved.'))
+    .catch(e => console.log(e));
+}
+
+let addScore = (customerid, quizid, score) => {
+    return pool.query('insert into imagequiz.scores(customerid, quizid, score) values ($1, $2, $3)', [customerid, quizid, score])
+    .then(() => console.log('The score was saved.'))
+    .catch(e => console.log(e));
+}
+
+let getFlowers = () => {
+    let sql = `select * from imagequiz.flowers f`;
+    return pool.query(sql)
+    .then(result => result.rows);
+}
+
+module.exports = { addCustomer, addScore, getFlowers }

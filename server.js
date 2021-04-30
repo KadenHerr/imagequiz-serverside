@@ -5,6 +5,7 @@
 // dependencies
 const express = require('express');
 const cors = require('cors');
+const db = require('./db');
 
 // create the server
 const app = express();
@@ -175,7 +176,7 @@ let generateQuizzes = () => {
 let quizzes = generateQuizzes();
 
 
-// Can delete this later
+// DB home display
 app.get('/', (request, response) => {
     response.send('<h1>Welcome to imagequiz serveice.</h1>');
 });
@@ -214,8 +215,15 @@ app.post('/score', (request, response) => {
     response.send(`The score ${s} was added successfully`);
 });
 
-
-
+// Add a customer to the database.
+app.post('/customer', (request, response) => {
+    let name = request.body.name;
+    let email = request.body.email;
+    let password = request.body.password;
+    db.addCustomer(name,email,password)
+    .then(() =>response.send(`The score ${s} was added successfully`))
+    .catch(e => response.status(500).send('There was an error in saving the customer'));
+});
 
 
 // start the server
