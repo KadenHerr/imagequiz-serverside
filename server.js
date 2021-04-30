@@ -1,5 +1,4 @@
-//const flowers = require('./flowers');
-//const quizzes = require('./quizzes');
+
 // This is the server file
 
 
@@ -178,7 +177,7 @@ let quizzes = generateQuizzes();
 
 // Can delete this later
 app.get('/', (request, response) => {
-    response.send('<h1>welcome to helloworld serveice.</h1>');
+    response.send('<h1>Welcome to imagequiz serveice.</h1>');
 });
 
 
