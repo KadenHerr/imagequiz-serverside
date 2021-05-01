@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 let host = process.env.host;
 let database = process.env.database;
 let port = process.env.port;
-let username = process.env.username;
+let username = process.env.mydbusername;
 let password = process.env.password;
 
 let connectionString =
@@ -37,4 +37,9 @@ let getFlowers = () => {
     .then(result => result.rows);
 }
 
-module.exports = { addCustomer, addScore, getFlowers }
+let getQuizzes = () => {
+    let sql = `select * from imagequiz.quizzes f`;
+    return pool.query(sql)
+    .then(result => result.rows);
+}
+module.exports = { addCustomer, addScore, getFlowers, getQuizzes }
