@@ -32,6 +32,7 @@ let addScore = (customerid, quizid, score) => {
 }
 
 let getFlowers = () => {
+    console.log(connection.connectionString);
     let sql = `select * from imagequiz.flowers f`;
     return pool.query(sql)
     .then(result => result.rows);

@@ -74,7 +74,7 @@ app.get('/', (request, response) => {
 app.get('/flowers', (request, response) => {
     db.getFlowers()
     .then(flowers => response.json(flowers))
-    .catch(e => {console.log(e); response.status(500).send('There was an error in finding the flowers.')});
+    .catch(e => {console.log(e); response.status(500).send(e)});
 });
 
 
