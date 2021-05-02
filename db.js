@@ -12,7 +12,7 @@ let connectionString =
 `postgres://${username}:${password}@${host}:${port}/${database}`;
 
 let connection = {
-    connectionString: process.env.DATABSE_URL ? process.env.DATABASE_URL : connectionString,
+    connectionString: process.env.DATABASE_URL ? process.env.DATABASE_URL : connectionString,
     ssl : {rejectUnauthorized: false}
 };
 
